@@ -24,19 +24,36 @@ class Producto {
   }
 }
 
+
+/**
+ * Gestiona el carrito de compras.
+ */
 class Carrito {
   constructor() {
     this.productos = [];
   }
 
+  
+  /**
+   * Agrega un producto al carrito.
+   * @param {Producto} producto - Producto a agregar.
+   */
   agregarProducto(producto) {
     this.productos.push(producto);
   }
 
+
+  /**
+   * Calcula el total de todos los productos en el carrito.
+   * @returns {number} Total del carrito.
+   */ 
   calcularTotalCarrito() {
     return this.productos.reduce((total, producto) => total + producto.calcularTotal(), 0);
   }
 
+   /**
+   * Vacía el carrito.
+   */
   vaciarCarrito() {
     this.productos = [];
   }
