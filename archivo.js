@@ -1,10 +1,24 @@
+/**
+ * Gestiona los datos y comportamiento de un producto del catálogo.
+ */
+
 class Producto {
+   /**
+   * @param {string} nombre - Nombre del producto.
+   * @param {number} precio - Precio unitario.
+   * @param {number} cantidad - Cantidad del producto.
+   */
   constructor(nombre, precio, cantidad) {
     this.nombre = nombre;
+    /** @type {number} */
     this.precio = precio;
     this.cantidad = cantidad;
   }
 
+   /**
+   * Calcula el total por cantidad de un producto.
+   * @returns {number} Total por la cantidad de productos.
+   */
   calcularTotal() {
     return this.precio * this.cantidad;
   }
