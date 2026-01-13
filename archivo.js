@@ -59,17 +59,35 @@ class Carrito {
   }
 }
 
+/**
+ * Representa a un usuario del sistema que puede realizar compras.
+ */
 class Usuario {
+
+  /**
+   * @param {string} nombre - Nombre del usuario.
+   * @param {string} correo - Correo electrónico del usuario.
+   */
   constructor(nombre, correo) {
     this.nombre = nombre;
     this.correo = correo;
+    /** @type {Carrito} */
     this.carrito = new Carrito();
   }
 
+  /**
+   * Añade un producto al carrito del usuario.
+   * @param {Producto} producto - Producto que se quiere añadir al carrito.
+   */
   agregarProductoAlCarrito(producto) {
     this.carrito.agregarProducto(producto);
   }
 
+  /**
+   * Finaliza la compra del usuario.
+   * Calcula el total del carrito, muestra el importe por consola
+   * y vacía el carrito una vez realizada la compra.
+   */
   finalizarCompra() {
     const total = this.carrito.calcularTotalCarrito();
     console.log(`Usuario ${this.nombre} ha realizado una compra por un total de ${total}€`);
